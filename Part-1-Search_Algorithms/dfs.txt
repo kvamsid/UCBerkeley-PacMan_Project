@@ -1,0 +1,80 @@
+def depthFirstSearch(problem):
+    """
+    Search the deepest nodes in the search tree first.
+
+    Your search algorithm needs to return a list of actions that reaches the
+    goal. Make sure to implement a graph search algorithm.
+
+    To get started, you might want to try some of these simple commands to
+    understand the search problem that is being passed in:
+
+    print("Start:", problem.getStartState())
+    print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
+    print("Start's successors:", problem.getSuccessors(problem.getStartState()))
+    """
+    "*** YOUR CODE HERE ***"
+    startingState = problem.getStartState()
+    pathFollowed = []
+    totalCost = 0.0
+    startState = (startingState, pathFollowed, totalCost)
+    stack = Stack()
+    stack.push(startState)
+    closedList = []
+    while not stack.isEmpty():
+        currentState, currentPath, currentCost = stack.pop()
+        if problem.isGoalState(currentState):
+            return currentPath
+        if currentState not in closedList:
+            closedList.append(currentState)
+            childData = problem.getSuccessors(currentState)
+            for state, path, cost in childData:
+                updatedPath = currentPath + [path]
+                updatedCost = cost+ currentCost
+                childState = (state, updatedPath, updatedCost)
+                stack.push(childState)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                ]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+                startingState = problem.getStartState()
+    pathFollowed = []
+    totalCost = 0.0
+    visited = []
+    answer = []
+    answer = dfsRec(problem, startingState, pathFollowed, totalCost, visited)
+    print(type(answer))
+    return answer
+
+def dfsRec(problem, currentState, currentPath, currentCost, visited):
+
+    if problem.isGoalState(currentState):
+        # print(type(currentPath))
+        return currentPath
+    if currentState not in visited:
+        visited.append(currentState)
+        childData = problem.getSuccessors(currentState)
+        for state, path, cost in childData:
+            updatedPath = currentPath + [path]
+            updatedCost = currentCost + cost
+            return dfsRec(problem, state, updatedPath, updatedCost, visited)
