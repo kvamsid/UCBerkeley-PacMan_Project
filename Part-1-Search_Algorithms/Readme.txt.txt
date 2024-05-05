@@ -1,0 +1,1 @@
+This part of the project encompassed implementing a spectrum of search algorithms such as depth-first, breadth-first, uniform cost, and A*, complemented by the crafting of diverse heuristics tailored for A* search. These methodologies were strategically applied to tackle navigation hurdles and the intricate traveling salesman problem within the immersive Pac-Man environment.
