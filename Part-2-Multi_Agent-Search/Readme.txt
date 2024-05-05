@@ -1,0 +1,1 @@
+In this part of my project, I introduced ghosts into the Pac-Man scenario, creating a multi-agent environment. The presence of ghosts drastically altered the dynamics, prompting significant adjustments in my search algorithms' strategies. Adapting to this change required me to rethink and innovate my approaches to effectively navigate the evolving challenges of the Pac-Man game.
